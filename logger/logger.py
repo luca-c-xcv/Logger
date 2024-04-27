@@ -1,7 +1,8 @@
-import logging                                                                                                                                                                                              
+import logging
+
 class Logger:
     def __init__(self, log_path='./crawler.log'):
-        logging.basicConfig(filename=log_path, level=logging.DEBUG, format='%(asctime)s [%(levelname)s] ::: %(message)s')
+        logging.basicConfig(filename=log_path, level=logging.DEBUG,format='%(asctime)s [%(levelname)s] ::: %(message)s')
         self.logger = logging.getLogger(__name__)
     def _log_message(self, message, level=logging.DEBUG):
         """ define the type of log message """
@@ -21,4 +22,3 @@ class Logger:
     def critical(self, message):
         """ print a critical message """
         self._log_message(message, level=logging.CRITICAL)
-
